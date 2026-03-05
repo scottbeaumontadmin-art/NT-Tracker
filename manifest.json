@@ -1,0 +1,17 @@
+{
+  "name": "NT Tracker",
+  "short_name": "NT Tracker",
+  "description": "Track your National Trust property visits and complete challenges",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#0f2a1e",
+  "theme_color": "#0f2a1e",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><circle cx='96' cy='96' r='96' fill='%230f2a1e'/><text x='96' y='120' text-anchor='middle' font-size='72' font-family='Georgia' font-weight='bold' fill='%23c8952a'>NT</text></svg>",
+      "sizes": "192x192",
+      "type": "image/svg+xml"
+    }
+  ]
+}
