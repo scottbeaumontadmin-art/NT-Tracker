@@ -842,7 +842,7 @@ function calcChallenges() {
     TOURIST:          { done:count>=20,    cur:Math.min(count,20),    tgt:20,        icon:'🌱', desc:'Visit 20 NT properties' },
     ENTHUSIAST:       { done:count>=50,    cur:Math.min(count,50),    tgt:50,        icon:'🌳', desc:'Visit 50 NT properties' },
     ADVOCATE:         { done:count>=100,   cur:Math.min(count,100),   tgt:100,       icon:'⭐', desc:'Visit 100 NT properties' },
-    'HILARY ALL STAR':{ done:count>=500,   cur:Math.min(count,500),   tgt:500,       icon:'🗺️', desc:'Visit 500+ NT properties — named after NT Director General Hilary McGrady' },
+    'HILARY ALL STAR':{ done:count>=250,   cur:Math.min(count,250),   tgt:250,       icon:'🗺️', desc:'Visit 250+ NT properties — named after NT Director General Hilary McGrady' },
 
     COUNTIES:         { done:visC.size>=allC.length, cur:visC.size, tgt:allC.length, icon:'📍', desc:'At least one property in every county', extra:[...visC].sort().join(', ')||'–' },
     'COUNTY COMPLETE':{ done:bCP>=1, cur:Math.round(bCP*100), tgt:100,              icon:'🏅', desc:'Complete all properties in a single county', extra:bC!=='-'?`Best: ${bC} (${bCF})`:'No visits yet' },
@@ -859,13 +859,13 @@ function calcChallenges() {
     'ALPHABET SQUARED':{ done:sqV.length>=10, cur:Math.min(sqV.length,10), tgt:10, icon:'⬛', desc:'10 properties where name and county start with the same letter', extra:sqV.slice(0,3).map(p=>p.name).join(', ')||'–' },
 
     'DOUBLING DOWN':  { done:dV.length>=10,  cur:Math.min(dV.length,10), tgt:10,   icon:'🔢', desc:'Visit 10 properties with consecutive double letters in their name' },
-    'DOUBLE TROUBLE': { done:dV.length>=dA.length, cur:dV.length, tgt:dA.length,   icon:'✌️', desc:`Visit all ${dA.length} double-letter properties` },
+    'DOUBLE TROUBLE': { done:dV.length>=100, cur:Math.min(dV.length,100), tgt:100,     icon:'✌️', desc:'Visit 100 properties with consecutive double letters in their name' },
     'COMPASS CLUB':   { done:cmpV.length>=cmpA.length, cur:cmpV.length, tgt:cmpA.length, icon:'🧭', desc:'Visit all properties with a compass direction in their name', extra:`Directions found: ${[...dirs].join(', ')||'none yet'}` },
     SNAKES:           { done:sV.length>=10,  cur:Math.min(sV.length,10), tgt:10,   icon:'🐍', desc:'Visit 10 properties starting with S' },
     'STAYING ALIVE':  { done:bV.length>=3&&gV2.length>=3, cur:Math.min(bV.length,3)+Math.min(gV2.length,3), tgt:6, icon:'🕺', desc:'3 properties starting with B, and 3 starting with G', extra:`B: ${Math.min(bV.length,3)}/3 · G: ${Math.min(gV2.length,3)}/3` },
 
     'FOUR SEASONS':   { done:sDone>=4, cur:sDone, tgt:4,                           icon:'🍂', desc:'Log a visit in each calendar season', seas },
-    PARKRUNNER:       { done:pkV.length>0, cur:Math.min(pkV.length,1), tgt:1,      icon:'🏃', desc:'Visit an NT property that hosts a parkrun event', extra:pkV.length?pkV[0].name:'Parkrun properties are marked 🏃 in Explore' },
+    PARKRUNNER:       { done:pkV.length>=5, cur:Math.min(pkV.length,5), tgt:5,        icon:'🏃', desc:'Visit 5 NT properties that host a parkrun event', extra:pkV.length?pkV.map(p=>p.name).join(', '):'Parkrun properties are marked 🏃 in Explore' },
     'CHEERS!':        { done:pV.length>=10, cur:Math.min(pV.length,10), tgt:10,    icon:'🍺', desc:'Visit 10 NT pubs' },
     'CHEERzzzzz':     { done:pV.length>=pA.length, cur:pV.length, tgt:pA.length,   icon:'🍻', desc:`Visit all ${pA.length} confirmed NT pubs (up to 39 once fully verified)` },
   };
